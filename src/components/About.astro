@@ -1,0 +1,115 @@
+---
+const skills = [
+  { label: 'Backend & IA', items: ['Python', 'Django', 'FastAPI', 'LLMs', 'Agentes IA'] },
+  { label: 'Frontend / Mobile', items: ['React', 'Next.js', 'React Native', 'JavaScript'] },
+  { label: 'Datos & Cloud', items: ['MySQL', 'PostgreSQL', 'AWS S3', 'Docker'] },
+  { label: 'Pagos & Ops', items: ['Pasarelas de pago', 'REST APIs', 'Logging', 'Linux'] },
+];
+---
+
+<section id="sobre-mi">
+  <div class="container">
+    <p class="section-eyebrow reveal">Sobre mí</p>
+    <h2 class="section-title reveal reveal-delay-1">Quién está <em>detrás</em></h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="reveal reveal-delay-1">
+          Con más de <strong>8 años construyendo software</strong>, he pasado por todos los roles: desarrollador web, ingeniero de infraestructura Linux, freelancer independiente y hoy, ingeniero de integraciones en una de las plataformas de pagos más importantes de México.
+        </p>
+        <p class="reveal reveal-delay-2">
+          En <strong>Openpay</strong> trabajo sobre el stack que conecta comercios con infraestructura financiera crítica: pipelines de datos, procesamiento de eventos de pago y sistemas de observabilidad que garantizan que cada transacción llegue a buen puerto. Es ingeniería donde el costo de un error se mide en dinero real.
+        </p>
+        <p class="reveal reveal-delay-3">
+          En paralelo, opero como <strong>Ingeniero en Desarrollo de Software, Arquitecto y Orquestador de Inteligencia Artificial</strong> — diseñando productos digitales completos y construyendo sistemas que integran IA de forma práctica y medible para resolver problemas reales de negocio.
+        </p>
+
+        <blockquote class="reveal reveal-delay-4">
+          "Si lo puedes imaginar, lo puedes programar."
+        </blockquote>
+
+        <div class="about-ctas reveal reveal-delay-4">
+          <a href="https://www.linkedin.com/in/daniel-hernandez-sanchez/" target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/danielschez" target="_blank" rel="noopener" class="btn btn-ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.167 6.839 9.49.5.09.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <div class="about-photo-wrap reveal">
+          <img
+            src="/me.jpg"
+            alt="Daniel Hernández — Ingeniero en Software y Arquitecto de IA"
+            class="about-photo"
+            loading="lazy"
+            width="360" height="400"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?w=360&h=400&fit=crop&crop=face';"
+          />
+          <div class="about-photo-border"></div>
+        </div>
+
+        <div class="skills-panel reveal reveal-delay-2">
+          <p class="skills-title"><span class="mono-label">// stack técnico</span></p>
+          {skills.map(group => (
+            <div class="skill-group">
+              <span class="skill-group-label">{group.label}</span>
+              <div class="skill-chips">
+                {group.items.map(item => <span class="skill-chip">{item}</span>)}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+#sobre-mi { background: var(--bg); }
+.about-grid { display: grid; grid-template-columns: 1fr 360px; gap: 5rem; align-items: start; }
+.about-text p { font-size: 0.975rem; color: var(--text-2); line-height: 1.85; margin-bottom: 1.25rem; }
+.about-text strong { color: var(--text); font-weight: 500; }
+blockquote {
+  margin: 2rem 0; padding: 1.25rem 1.5rem;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0;
+  font-size: 1rem; font-style: italic; color: var(--text-2); line-height: 1.6; position: relative;
+}
+blockquote::before {
+  content: '"'; position: absolute; top: -8px; left: 12px;
+  font-size: 3rem; line-height: 1; color: var(--accent); opacity: 0.3; font-family: var(--font-display);
+}
+.about-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 2rem; }
+.about-right { display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 6rem; }
+.about-photo-wrap { position: relative; border-radius: 12px; overflow: hidden; }
+.about-photo {
+  display: block; width: 100%; height: 320px;
+  object-fit: cover; object-position: top;
+  border-radius: 12px; border: 1px solid var(--border-2);
+  transition: transform 0.5s var(--ease-out-expo);
+}
+.about-photo-wrap:hover .about-photo { transform: scale(1.04); }
+.about-photo-border {
+  position: absolute; inset: 0; border-radius: 12px;
+  background: linear-gradient(to bottom, transparent 60%, var(--bg) 100%); pointer-events: none;
+}
+.skills-panel { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+.skills-title { margin-bottom: 1.25rem; }
+.mono-label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.08em; }
+.skill-group { margin-bottom: 1.25rem; }
+.skill-group:last-child { margin-bottom: 0; }
+.skill-group-label { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-3); letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 0.5rem; }
+.skill-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.skill-chip { font-size: 0.78rem; color: var(--text-2); background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 4px 10px; transition: border-color 0.2s, color 0.2s; }
+.skill-chip:hover { border-color: var(--accent); color: var(--text); }
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-right { position: static; }
+  .about-photo { height: 260px; }
+}
+</style>

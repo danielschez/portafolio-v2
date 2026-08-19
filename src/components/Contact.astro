@@ -1,0 +1,139 @@
+---
+---
+
+<section id="contacto">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left reveal">
+        <p class="section-eyebrow">Contacto</p>
+        <h2 class="contact-heading">¿Tienes un<br/><em>proyecto</em>?</h2>
+        <p class="contact-desc">
+          Estoy disponible para proyectos freelance, consultorías técnicas y colaboraciones. Cuéntame qué estás construyendo.
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:danielhs.dev@gmail.com" class="contact-link">
+            <div class="link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <div>
+              <div class="link-label">Correo</div>
+              <div class="link-value">danielschez.dev</div>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+
+          <a href="https://www.linkedin.com/in/daniel-hernandez-sanchez/" target="_blank" rel="noopener" class="contact-link">
+            <div class="link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <div class="link-label">LinkedIn</div>
+              <div class="link-value">daniel-hernandez-sanchez</div>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+
+          <a href="https://github.com/danielschez" target="_blank" rel="noopener" class="contact-link">
+            <div class="link-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.167 6.839 9.49.5.09.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12c0-5.523-4.477-10-10-10z"/></svg>
+            </div>
+            <div>
+              <div class="link-label">GitHub</div>
+              <div class="link-value">danielschez</div>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contactForm">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Tu nombre" required autocomplete="name"/>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required autocomplete="email"/>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn">
+            <span id="btnText">Enviar mensaje</span>
+            <span class="btn-arrow">→</span>
+          </button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="contact-bg" aria-hidden="true"><div class="bg-glow"></div></div>
+</section>
+
+<style>
+#contacto { background: var(--bg2); position: relative; overflow: hidden; }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; position: relative; z-index: 1; }
+.contact-heading { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; line-height: 1.05; color: var(--text); margin: 1rem 0 1.5rem; }
+.contact-heading em { font-style: normal; color: transparent; -webkit-text-stroke: 1.5px var(--accent); }
+.contact-desc { font-size: 0.95rem; color: var(--text-2); line-height: 1.75; margin-bottom: 2.5rem; }
+.contact-links { display: flex; flex-direction: column; }
+.contact-link { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border); text-decoration: none; color: var(--text); transition: padding-left 0.3s var(--ease-out-expo); }
+.contact-link:first-child { border-top: 1px solid var(--border); }
+.contact-link:hover { padding-left: 0.5rem; }
+.link-icon { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; color: var(--accent); flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
+.contact-link:hover .link-icon { background: rgba(99,102,241,0.1); border-color: var(--accent); }
+.link-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase; line-height: 1.2; }
+.link-value { font-size: 0.875rem; color: var(--text-2); line-height: 1.3; transition: color 0.2s; }
+.contact-link:hover .link-value { color: var(--text); }
+.link-arrow { margin-left: auto; color: var(--text-3); font-size: 1rem; transition: transform 0.3s var(--ease-spring), color 0.2s; }
+.contact-link:hover .link-arrow { transform: translateX(4px); color: var(--accent); }
+
+.contact-form-wrap { background: var(--bg3); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase; }
+.form-group input, .form-group textarea { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text); font-family: var(--font-body); font-size: 0.9rem; transition: border-color 0.2s, box-shadow 0.2s; resize: vertical; outline: none; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-3); }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99,102,241,0.12); }
+.submit-btn { width: 100%; justify-content: center; gap: 8px; }
+.btn-arrow { transition: transform 0.25s var(--ease-spring); }
+.submit-btn:hover .btn-arrow { transform: translateX(4px); }
+.form-note { font-family: var(--font-mono); font-size: 0.75rem; text-align: center; min-height: 1.2em; transition: color 0.3s; }
+.form-note.success { color: var(--accent-3); }
+.form-note.error { color: #f87171; }
+
+.contact-bg { position: absolute; inset: 0; pointer-events: none; }
+.bg-glow { position: absolute; width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(99,102,241,0.07) 0%, transparent 70%); bottom: -100px; left: 50%; transform: translateX(-50%); filter: blur(40px); }
+
+@media (max-width: 900px) { .contact-inner { grid-template-columns: 1fr; gap: 3rem; } }
+</style>
+
+<script>
+const form = document.getElementById('contactForm') as HTMLFormElement;
+const btnText = document.getElementById('btnText')!;
+const note = document.getElementById('formNote')!;
+form?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  btnText.textContent = 'Enviando...';
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+    if (res.ok) {
+      btnText.textContent = 'Enviado ✓';
+      note.textContent = 'Mensaje recibido. Te respondo pronto.';
+      note.className = 'form-note success';
+      form.reset();
+      setTimeout(() => { btnText.textContent = 'Enviar mensaje'; note.textContent = ''; }, 5000);
+    } else throw new Error();
+  } catch {
+    btnText.textContent = 'Enviar mensaje';
+    note.textContent = 'Algo salió mal. Escríbeme directamente.';
+    note.className = 'form-note error';
+  }
+});
+</script>

@@ -1,0 +1,143 @@
+---
+const jobs = [
+  {
+    period: 'Sep 2025 – Actualidad',
+    company: 'Openpay',
+    role: 'Ingeniero MerchantOps — Integraciones de Pasarelas de Pago',
+    current: true,
+    description: 'Diseño e implemento integraciones entre comercios y pasarelas de pago, garantizando la disponibilidad y trazabilidad de cada transacción. Construyo pipelines de procesamiento de eventos y sistemas de logging que permiten diagnóstico en tiempo real. Mi trabajo combina ingeniería backend con análisis operacional: identifico cuellos de botella en flujos de pago, optimizo queries críticas y resuelvo incidencias de alto impacto antes de que afecten al usuario final.',
+    tags: ['Python', 'MySQL', 'AWS S3', 'Logging', 'REST APIs', 'Pasarelas de pago', 'MongoDB'],
+    accent: '#6366f1',
+  },
+  {
+    period: 'Abr 2024 – Actualidad',
+    company: 'Freelance',
+    role: 'Ingeniero en Desarrollo de Software, Arquitecto y Orquestador de Inteligencia Artificial',
+    current: true,
+    description: 'Diseño y desarrollo soluciones digitales completas para empresas y emprendedores: desde plataformas web de alto rendimiento hasta sistemas potenciados con Inteligencia Artificial. Arquitecto flujos de agentes LLM, orquesto pipelines de datos y construyo productos end-to-end — del primer wireframe al despliegue en producción — usando un stack moderno orientado a escalabilidad e impacto real de negocio.',
+    tags: ['Python', 'React', 'Next.js', 'Django', 'FastAPI', 'LLMs', 'IA', 'Docker', 'MongoDB'],
+    accent: '#a78bfa',
+  },
+  {
+    period: 'Abr 2024 – Sep 2025',
+    company: 'Optimiza Web',
+    role: 'Desarrollador Full Stack',
+    current: false,
+    description: 'Desarrollé y mantuve sistemas web y móviles que optimizaron procesos internos y mejoraron la experiencia de clientes. Reduje tiempos de carga hasta un 40% mediante optimización de queries y refactorización de componentes críticos. Automaticé flujos operativos en colaboración con áreas de ventas, logística y soporte.',
+    tags: ['Python', 'React Native', 'PostgreSQL', 'FastAPI', 'Docker', 'Linux'],
+    accent: '#34d399',
+  },
+  {
+    period: 'Sep 2022 – Abr 2024',
+    company: 'Indra',
+    role: 'Ingeniero Linux — Sistemas Críticos',
+    current: false,
+    description: 'Responsable de la estabilidad de plataformas Linux en entornos de alta disponibilidad. Automaticé operaciones con scripts de shell y Python, gestioné la disponibilidad 24/7 de servidores y reforcé capas de seguridad en infraestructura crítica.',
+    tags: ['Linux', 'Shell scripting', 'Python', 'Alta disponibilidad'],
+    accent: '#f59e0b',
+  },
+  {
+    period: 'Mar 2020 – Mar 2021',
+    company: 'Hamster Connect',
+    role: 'Desarrollador Web Full Stack',
+    current: false,
+    description: 'Colaboré con equipos distribuidos en Países Bajos y Australia para construir una red social financiera para emprendedores e inversionistas. Implementé funcionalidades de perfiles, publicaciones y notificaciones, trabajando end-to-end en frontend y backend.',
+    tags: ['PHP', 'MySQL', 'JavaScript', 'Git'],
+    accent: '#6366f1',
+  },
+  {
+    period: 'Ago 2017 – Sep 2023',
+    company: 'Universidad Anáhuac',
+    role: 'Desarrollador Web — Proyecto SmartCampus',
+    current: false,
+    description: 'Desarrollé y mantuve 7 sistemas del proyecto SmartCampus: admisiones, reportes académicos y gestión administrativa. Digitalicé procesos clave que redujeron la carga operativa del personal y mejoraron la experiencia de cientos de estudiantes diariamente.',
+    tags: ['PHP', 'JavaScript', 'MySQL', 'Git'],
+    accent: '#a78bfa',
+  },
+];
+---
+
+<section id="experiencia">
+  <div class="container">
+    <p class="section-eyebrow reveal">Trayectoria</p>
+    <h2 class="section-title reveal reveal-delay-1">Experiencia <em>laboral</em></h2>
+
+    <div class="timeline">
+      {jobs.map((job, i) => (
+        <div class="timeline-item reveal" style={`--delay: ${i * 0.08}s; --accent-local: ${job.accent}`}>
+          <div class="timeline-left">
+            <div class="timeline-dot">
+              {job.current && <div class="dot-pulse"></div>}
+            </div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="card-header">
+              <div class="card-meta">
+                <span class="period">{job.period}</span>
+                <span class="company">{job.company}</span>
+                {job.current && <span class="current-badge">actual</span>}
+              </div>
+              <h3 class="card-role">{job.role}</h3>
+            </div>
+            <p class="card-desc">{job.description}</p>
+            <div class="tag-list">
+              {job.tags.map(t => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+#experiencia { background: var(--bg); }
+.timeline { position: relative; display: flex; flex-direction: column; gap: 0; }
+.timeline-item { display: grid; grid-template-columns: 48px 1fr; gap: 1.5rem; transition-delay: var(--delay, 0s); }
+.timeline-left { display: flex; flex-direction: column; align-items: center; padding-top: 6px; }
+.timeline-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--accent-local, var(--accent));
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2), 0 0 12px var(--accent-local, var(--accent));
+  position: relative; z-index: 1; flex-shrink: 0;
+  transition: box-shadow 0.3s;
+}
+.timeline-item:hover .timeline-dot { box-shadow: 0 0 0 5px rgba(99,102,241,0.15), 0 0 20px var(--accent-local, var(--accent)); }
+.dot-pulse {
+  position: absolute; inset: -4px; border-radius: 50%;
+  border: 1.5px solid var(--accent-local, var(--accent));
+  opacity: 0.6; animation: dotPulse 2s ease-out infinite;
+}
+@keyframes dotPulse { 0%{transform:scale(1);opacity:0.6} 100%{transform:scale(2.5);opacity:0} }
+.timeline-line { width: 1px; flex: 1; min-height: 24px; background: linear-gradient(to bottom, var(--accent-local, var(--border)), var(--border)); opacity: 0.3; margin-top: 4px; }
+.timeline-item:last-child .timeline-line { display: none; }
+
+.timeline-card {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.75rem; margin-bottom: 1.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s var(--ease-out-expo);
+  position: relative; overflow: hidden;
+}
+.timeline-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent-local, var(--accent)), transparent);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease-out-expo);
+}
+.timeline-item:hover .timeline-card { border-color: var(--border-2); box-shadow: 0 8px 40px rgba(0,0,0,0.3); transform: translateX(4px); }
+.timeline-item:hover .timeline-card::before { transform: scaleX(1); }
+
+.card-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 0.4rem; }
+.period { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-3); letter-spacing: 0.04em; }
+.company { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-local, var(--accent)); letter-spacing: 0.04em; }
+.current-badge { font-size: 0.66rem; font-weight: 500; color: var(--accent-3); background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.2); border-radius: 99px; padding: 1px 8px; letter-spacing: 0.06em; }
+.card-role { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text); line-height: 1.3; }
+.card-desc { font-size: 0.9rem; color: var(--text-2); line-height: 1.75; margin: 0.75rem 0 1.25rem; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 6px; }
+
+@media (max-width: 600px) {
+  .timeline-item { grid-template-columns: 28px 1fr; gap: 0.75rem; }
+  .timeline-card { padding: 1.25rem; }
+}
+</style>
