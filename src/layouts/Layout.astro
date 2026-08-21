@@ -255,6 +255,4 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-const yearEl = document.getElementById('currentYear');
-if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 </script>
