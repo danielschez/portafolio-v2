@@ -1,0 +1,261 @@
+---
+const services = [
+  {
+    num: '01',
+    title: 'Sistemas web a medida',
+    hook: 'Deja de forzar tu operación dentro de herramientas genéricas.',
+    description: 'Diseño plataformas alrededor de cómo realmente trabaja tu negocio, no al revés. Menos pasos manuales, menos hojas de cálculo sueltas, más control real sobre tus procesos.',
+    tag: 'A medida',
+    accent: '#6366f1',
+    icon: 'M4 4h16v16H4V4zm4 4h8m-8 4h8m-8 4h4',
+  },
+  {
+    num: '02',
+    title: 'Aplicaciones móviles',
+    hook: 'Lleva tu operación donde realmente sucede.',
+    description: 'Apps para clientes, equipos internos y operaciones que necesitan trabajar desde cualquier lugar, sin depender de procesos de oficina.',
+    tag: 'iOS & Android',
+    accent: '#34d399',
+    icon: 'M8 3h8a2 2 0 012 2v14a2 2 0 01-2 2H8a2 2 0 01-2-2V5a2 2 0 012-2zM11 18h2',
+  },
+  {
+    num: '03',
+    title: 'Automatización de procesos',
+    hook: 'Recupera horas que hoy se van en tareas repetitivas.',
+    description: 'Identifico los cuellos de botella de tu equipo y construyo flujos automáticos que conectan tus sistemas para que la información se mueva sola.',
+    tag: 'Eficiencia',
+    accent: '#a78bfa',
+    icon: 'M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2.5 2.5M17.5 17.5L15 15M6 18l2.5-2.5M17.5 6.5L15 9',
+  },
+  {
+    num: '04',
+    title: 'Integraciones & APIs',
+    hook: 'Haz que tus sistemas hablen entre sí.',
+    description: 'Conecto pasarelas de pago, servicios externos, bases de datos y plataformas que hoy operan aisladas, con experiencia directa en integraciones financieras de alto volumen.',
+    tag: 'Pagos & datos',
+    accent: '#f59e0b',
+    icon: 'M9 12h6m-6 0a3 3 0 106 0 3 3 0 00-6 0zm9-6l3 3-3 3m-12 0l-3-3 3-3',
+  },
+  {
+    num: '05',
+    title: 'E-commerce',
+    hook: 'Una tienda pensada para vender, no solo para existir.',
+    description: 'Plataformas de venta con foco en conversión: catálogo rápido, checkout sin fricción e integraciones que facilitan la operación y el crecimiento del negocio.',
+    tag: 'Conversión',
+    accent: '#34d399',
+    icon: 'M6 6h15l-1.5 9h-12L6 6zm0 0L5 3H2m5 18a1 1 0 100-2 1 1 0 000 2zm10 0a1 1 0 100-2 1 1 0 000 2z',
+  },
+  {
+    num: '06',
+    title: 'Inteligencia Artificial',
+    hook: 'IA aplicada a un problema real, no una demo bonita.',
+    description: 'Asistentes, agentes y automatizaciones con IA diseñados para resolver tareas específicas de tu negocio de forma medible, sin sobreingeniería ni funciones que nadie utiliza.',
+    tag: 'IA aplicada',
+    accent: '#6366f1',
+    icon: 'M12 2a4 4 0 014 4c0 1.5-.8 2.5-1.5 3.3M12 2a4 4 0 00-4 4c0 1.5.8 2.5 1.5 3.3M8 9.3V13a4 4 0 004 4 4 4 0 004-4V9.3M10 21h4',
+  },
+  {
+    num: '07',
+    title: 'Arquitectura & Consultoría',
+    hook: 'Define la solución correcta antes de gastar en construir.',
+    description: 'Acompañamiento en arquitectura, selección tecnológica y estrategia técnica para reducir riesgos, evitar reescrituras costosas y construir una base preparada para crecer.',
+    tag: 'Consultoría',
+    accent: '#a78bfa',
+    icon: 'M3 21h18M9 8h1m4 0h1M9 12h1m4 0h1M9 16h1m4 0h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16',
+  },
+];
+---
+
+<section id="servicios">
+  <div class="container">
+    <p class="section-eyebrow reveal">Servicios</p>
+    <h2 class="section-title reveal reveal-delay-1">En qué puedo <em>ayudarte</em></h2>
+    <p class="section-intro reveal reveal-delay-1">
+      No vendo horas de código. Resuelvo problemas de negocio con software — desde una integración puntual hasta un sistema completo en producción.
+    </p>
+
+    <div class="services-grid">
+      {services.map((s, i) => (
+        <article
+          class="service-card reveal"
+          style={`--delay: ${i * 0.08}s; --accent-local: ${s.accent}`}
+        >
+          <div class="card-top">
+            <div class="service-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d={s.icon}/>
+              </svg>
+            </div>
+            <span class="service-num">{s.num}</span>
+          </div>
+
+          <span class="service-tag">{s.tag}</span>
+          <h3 class="service-title">{s.title}</h3>
+          <p class="service-hook">{s.hook}</p>
+          <p class="service-desc">{s.description}</p>
+
+          <a
+            href={`https://wa.me/5215548922766?text=${encodeURIComponent(
+            `Hola Daniel, vi tu portafolio y me interesa cotizar: ${s.title}`
+            )}`}
+            target="_blank"
+            rel="noopener"
+            class="service-cta"
+          >
+            Hablemos de tu proyecto <span class="cta-arrow">→</span>
+          </a>
+
+          <div class="card-glow" aria-hidden="true"></div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+#servicios { background: var(--bg); }
+
+.section-intro {
+  max-width: 560px;
+  font-size: 0.975rem;
+  color: var(--text-2);
+  line-height: 1.75;
+  margin-top: -0.5rem;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.service-card {
+  background: var(--bg2);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s, transform 0.3s var(--ease-out-expo);
+  transition-delay: var(--delay, 0s);
+}
+.service-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-local), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.service-card:hover { background: var(--bg3); }
+.service-card:hover::before { opacity: 1; }
+
+.card-glow {
+  position: absolute; width: 220px; height: 220px;
+  background: radial-gradient(circle, var(--accent-local), transparent 70%);
+  opacity: 0; pointer-events: none; transition: opacity 0.4s;
+  transform: translate(-50%, -50%);
+  top: var(--gy, 50%); left: var(--gx, 50%);
+  filter: blur(40px);
+}
+.service-card:hover .card-glow { opacity: 0.07; }
+
+.card-top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+.service-icon {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--accent-local);
+  transition: border-color 0.2s, background 0.2s;
+}
+.service-card:hover .service-icon {
+  border-color: var(--accent-local);
+  background: color-mix(in srgb, var(--accent-local) 12%, transparent);
+}
+.service-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+}
+
+.service-tag {
+  display: inline-block;
+  width: fit-content;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-local);
+  background: color-mix(in srgb, var(--accent-local) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-local) 25%, transparent);
+  border-radius: 99px;
+  padding: 2px 10px;
+  margin-bottom: 0.3rem;
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.25;
+}
+
+.service-hook {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.service-desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 0.5rem;
+}
+
+.service-cta {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-local);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 4px;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  transition: gap 0.25s var(--ease-spring);
+}
+.service-cta:hover { gap: 8px; }
+.cta-arrow { transition: transform 0.25s var(--ease-spring); }
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.querySelectorAll<HTMLElement>('.service-card').forEach(card => {
+  card.addEventListener('mousemove', (e: MouseEvent) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--gx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+    card.style.setProperty('--gy', ((e.clientY - rect.top) / rect.height * 100) + '%');
+  });
+});
+</script>
