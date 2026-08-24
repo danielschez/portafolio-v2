@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import casualImage from '../assets/casual-photo.png';
+
 const skills = [
   { label: 'Backend & IA', items: ['Python', 'Django', 'FastAPI', 'LLMs', 'Agentes IA'] },
   { label: 'Frontend / Mobile', items: ['React', 'Next.js', 'React Native', 'JavaScript'] },
@@ -42,13 +45,15 @@ const skills = [
 
       <div class="about-right">
         <div class="about-photo-wrap reveal">
-          <img
-            src="/me.jpg"
+          <Image
+            src={casualImage}
             alt="Daniel Hernández — Ingeniero en Software y Arquitecto de IA"
             class="about-photo"
             loading="lazy"
-            width="360" height="400"
-            onerror="this.onerror=null;this.src='/casual-photo.png';"
+            width={360}
+            height={400}
+            format="webp"
+            quality={80}
           />
           <div class="about-photo-border"></div>
         </div>

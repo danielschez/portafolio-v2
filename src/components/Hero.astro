@@ -1,5 +1,7 @@
 ---
 // Hero.astro — animated hero with photo + floating tech badges
+import { Image } from 'astro:assets';
+import meImage from '../assets/me.png';
 ---
 
 <section id="hero">
@@ -56,13 +58,15 @@
     <div class="hero-visual">
       <div class="photo-container">
         <div class="photo-frame">
-          <img
-            src="/me.png"
-            alt="Daniel Hernández Sánchez — Ingeniero en Software y Consultor de Soluciones"
+          <Image
+            src={meImage}
+            alt="Daniel Hernández Sánchez — Ingeniero en Software y Arquitecto de IA"
             class="hero-photo"
             loading="eager"
-            width="400"
-            height="480"
+            width={400}
+            height={480}
+            format="webp"
+            quality={80}
           />
           <div class="photo-overlay"></div>
           <div class="corner corner-tl"></div>
